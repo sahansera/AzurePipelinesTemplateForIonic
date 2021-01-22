@@ -1,1 +1,1 @@
-# AzurePipelinesTemplateForIonic
+# Azure Pipelines Template for Ionic
