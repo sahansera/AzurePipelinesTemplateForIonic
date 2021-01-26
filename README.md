@@ -6,6 +6,8 @@
 
 > Demo code of blog post from [https://sahansera.dev/multi-stage-builds-with-azure-pipelines-ionic/](https://sahansera.dev/multi-stage-builds-with-azure-pipelines-ionic/)
 
+![](https://sahansera.dev/static/bae2960ee9ab6d889a814e6099c8aa99/29007/multi-stage-builds-with-azure-pipelines-ionic-0.png)
+
 ### 🏠 [Homepage](https://sahansera.dev)
 
 ## Usage
