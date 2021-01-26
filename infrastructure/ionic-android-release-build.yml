@@ -1,0 +1,56 @@
+parameters:
+  - name: keystoreFileName
+    displayName: "The keystore file name for signing the apk"
+    type: string
+  - name: keystorePassword
+    displayName: "Password for the keystore"
+    type: string
+  - name: keyAlias
+    displayName: "key alias"
+    type: string
+  - name: keyPassword
+    displayName: "Key password"
+
+steps:    
+  - script: npm install -g @ionic/cli
+    displayName: 'Install Ionic CLI'
+
+  - task: Npm@1
+    inputs:
+      workingDir: '$(Build.SourcesDirectory)/$(projectName)'
+      command: install
+    displayName: 'NPM Install'
+
+  - powershell: |
+      ionic cap build android --prod --no-open
+      npx cap sync
+      cd android
+      ./gradlew assemble$(buildConfiguration)
+    workingDirectory: $(Build.SourcesDirectory)/$(projectName)
+    displayName: 'Build Android Project'
+
+  - task: AndroidSigning@3
+    inputs:
+      apkFiles: '$(Build.SourcesDirectory)/$(projectName)/android/app/build/outputs/apk/$(buildConfiguration)/*.apk'
+      apksign: true
+      apksignerKeystoreFile: '${{ parameters.keystoreFileName }}'
+      apksignerKeystorePassword: '${{ parameters.keystorePassword }}'
+      apksignerKeystoreAlias: '${{ parameters.keyAlias }}'
+      apksignerKeyPassword: '${{ parameters.keyPassword }}'
+      apksignerArguments: --out $(Build.SourcesDirectory)/$(projectName)/android/app/build/outputs/apk/$(buildConfiguration)/$(projectName)-$(buildConfiguration).apk --verbose
+      zipalign: true
+    displayName: 'Sign the APK'
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/$(projectName)/android/app/build/outputs/apk/$(buildConfiguration)'
+      contents: "**/$(projectName)-$(buildConfiguration).apk"
+      targetFolder: "$(Build.ArtifactStagingDirectory)/$(projectName)"
+    displayName: "Copy unsigned APK to staging directory"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)/$(projectName)"
+      ArtifactName: "$(projectName)"
+      publishLocation: "Container"
+    displayName: "Publish artifacts"

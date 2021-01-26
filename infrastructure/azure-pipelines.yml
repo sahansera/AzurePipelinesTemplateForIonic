@@ -1,0 +1,38 @@
+trigger:
+- main
+
+variables:
+  vmImageName: 'windows-latest'
+  projectName: 'SampleApp'
+
+stages:
+  - stage: Build
+    displayName: Build Ionic - Android projects
+    jobs:
+      # Debug build
+      - job: Build_Ionic_Android_Debug
+        variables:
+          - name: buildConfiguration
+            value: Debug
+        displayName: Build Debug
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - template: ionic-android-debug-build.yml
+
+      # Release build
+      - job: Build_Ionic_Android_Release
+        variables:
+          - group: SampleApp-Release
+          - name: buildConfiguration
+            value: Release
+        displayName: Build Release
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - template: ionic-android-release-build.yml
+            parameters:
+              keystoreFileName: 'sampleapp-release-key.keystore'
+              keystorePassword: $(keystorePassword)
+              keyAlias: $(keyAlias)
+              keyPassword: $(keyPassword)

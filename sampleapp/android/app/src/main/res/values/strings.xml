@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">sampleapp</string>
+    <string name="title_activity_main">sampleapp</string>
+    <string name="package_name">com.sahan.sampleapp</string>
+    <string name="custom_url_scheme">com.sahan.sampleapp</string>
+</resources>
