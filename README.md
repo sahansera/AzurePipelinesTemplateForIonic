@@ -4,9 +4,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: Sahan91](https://img.shields.io/twitter/follow/Sahan91.svg?style=social)](https://twitter.com/Sahan91)
 
-> Demo code of blog post from [https://sahansera.dev/multi-stage-builds-with-azure-pipelines-ionic/](https://sahansera.dev/multi-stage-builds-with-azure-pipelines-ionic/)
+This repo contains the code samples for the following blog posts.
 
+ - [Multi-stage builds for Ionic Apps with Azure Pipeline Templates](https://sahansera.dev/multi-stage-builds-with-azure-pipelines-ionic/)
 ![](https://sahansera.dev/static/bae2960ee9ab6d889a814e6099c8aa99/29007/multi-stage-builds-with-azure-pipelines-ionic-0.png)
+
+ - [Publishing Android Apps to Microsoft App Center from Azure DevOps](https://sahansera.dev/publishing-android-apps-to-microsoft-appcenter/)
+![](https://sahansera.dev/static/cf8523b7f8c99e1590a8c36b89f7da7a/cb9ea/publishing-android-apps-to-microsoft-appcenter-0-1.jpg)
 
 ### 🏠 [Homepage](https://sahansera.dev)
 
