@@ -36,3 +36,25 @@ stages:
               keystorePassword: $(keystorePassword)
               keyAlias: $(keyAlias)
               keyPassword: $(keyPassword)
+
+    - stage: Deploy
+      displayName: Deploy Debug and Release Apps to App Center
+      dependsOn: Build
+      jobs:
+        - deployment: Deploy_Android_Debug
+          variables:
+            buildConfiguration: Debug
+          displayName: Deploy Android - Debug App
+          pool:
+            vmImage: $(vmImageName)
+          environment: Staging
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+                  - template: ionic-android-debug-deploy.yml
+                    parameters:
+                      appCenterServiceConnection: 'App Center Integration for Sample App'
+                      appSlug: '{username or org name}/{app name in App Center}'
+                      appFile: '$(Pipeline.Workspace)/$(projectName)/app-$(buildConfiguration).apk'
+                      releaseNotes: 'Debug App'

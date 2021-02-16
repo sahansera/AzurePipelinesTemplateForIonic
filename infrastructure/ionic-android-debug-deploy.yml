@@ -1,0 +1,21 @@
+parameters:
+  - name: appCenterServiceConnection
+    displayName: 'Name of the service connection with App Center'
+  - name: appSlug
+    displayName: 'Path to application in AppCenter'
+  - name: appFile
+    displayName: 'Path of the apk to deploy'
+  - name: releaseNotes
+    displayName: 'Release notes'
+
+steps:    
+  - task: AppCenterDistribute@3
+    inputs:
+      serverEndpoint: '${{ parameters.appCenterServiceConnection }}'
+      appSlug: '${{ parameters.appSlug }}'
+      appFile: '${{parameters.appFile}}'
+      symbolsOption: 'Android'
+      destinationType: 'groups'
+      releaseNotesOption: 'input'
+      releaseNotesInput: '${{parameters.releaseNotes}}'
+    displayName: 'Distribute to App Center'
