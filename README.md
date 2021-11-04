@@ -42,8 +42,8 @@ Please share this Repository within your developer community, if you think that 
 👤 **Sahan Serasinghe**
 
 * Website: https://sahansera.dev
-* Twitter: [@Sahan91](https://twitter.com/Sahan91)
-* Github: [@sahan91](https://github.com/sahan91)
+* Twitter: [@_SahanSera](https://twitter.com/_SahanSera)
+* Github: [@sahansera](https://github.com/sahansera)
 * LinkedIn: [@sahanserasinghe](https://linkedin.com/in/sahanserasinghe)
 
 ## Contributing
