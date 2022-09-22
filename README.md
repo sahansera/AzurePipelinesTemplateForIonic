@@ -12,9 +12,7 @@ This repo contains the code samples for the following blog posts.
  - [Publishing Android Apps to Microsoft App Center from Azure DevOps](https://sahansera.dev/publishing-android-apps-to-microsoft-appcenter/)
 ![](https://sahansera.dev/static/cf8523b7f8c99e1590a8c36b89f7da7a/cb9ea/publishing-android-apps-to-microsoft-appcenter-0-1.jpg)
 
-### 🏠 [Homepage](https://sahansera.dev)
-
-## Usage
+## Usage 🚀
 
 1. Open up the project in Visual Studio Code
 2. Run the following commands
@@ -24,31 +22,18 @@ npm install && ionic build && npx cap sync
 ```
 3. You can push the project to your own repo and link it up with AzureDevOps
 
-## Questions? Bugs? Suggestions for Improvement?
+## Questions? Bugs? Suggestions for Improvement? ❓
+
 Having any issues or troubles getting started? [Get in touch with me](https://sahansera.dev/contact/) 
 
-## Support
-Has this Project helped you learn something new? or helped you at work? Do Consider Supporting.
+## Support 🎗
 
-<a href="https://www.buymeacoffee.com/sahan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" width="200"  ></a>
+Has this Project helped you learn something new? or helped you at work? Please consider giving a ⭐️ if this project helped you!
 
-or Give a ⭐️ if this project helped you!
+## Share it! ❤️
 
-## Share it!
 Please share this Repository within your developer community, if you think that this would make a difference! Cheers.
 
-## Author
+## Contributing ✍️
 
-👤 **Sahan Serasinghe**
-
-* Website: https://sahansera.dev
-* Twitter: [@_SahanSera](https://twitter.com/_SahanSera)
-* Github: [@sahansera](https://github.com/sahansera)
-* LinkedIn: [@sahanserasinghe](https://linkedin.com/in/sahanserasinghe)
-
-## Contributing
 PRs are welcome! Thank you
-
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
